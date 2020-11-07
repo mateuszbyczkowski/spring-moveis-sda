@@ -2,9 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Movies</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <div th:replace="fragments/header :: header-css"/>
 </head>
 <body>
-    <p th:text="'Hello, ' + ${name} + '!'" />
+<div th:replace="fragments/header :: header"/>
+<p th:text="'Hello, ' + ${name} + '!'"/>
 </body>
 </html>

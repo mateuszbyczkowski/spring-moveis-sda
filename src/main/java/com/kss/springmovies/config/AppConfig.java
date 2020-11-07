@@ -1,4 +1,4 @@
-package com.kss.springmovies;
+package com.kss.springmovies.config;
 
 import com.kss.springmovies.dto.Movie;
 import com.kss.springmovies.repository.EntityExistsException;

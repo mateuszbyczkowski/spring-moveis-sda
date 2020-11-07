@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <div th:replace="fragments/header :: header-css"/>
 </head>
 <body>
+<div th:replace="fragments/header :: header"/>
 <table>
     <tr th:each="actor: ${actorsVariable}">
         <td th:text="${actor.name}" />

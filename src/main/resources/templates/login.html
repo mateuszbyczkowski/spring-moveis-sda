@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+    <div th:replace="fragments/header :: header-css"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header"/>
+
+<h1>Login page</h1>
+
+<p>Example user: user/password</p>
+<p>Example admin: admin/admin</p>
+
+<!-- Wyświetl alert jeśli zmienna loginError==true, dodano klasy bootstrapowe -->
+<p th:if="${loginError}" class="alert-danger alert alert-dismissable">Wrong username or password!</p>
+
+<!-- Formularz logowania, akcja na endpoint /login, wyświetli się tylko jeśli użytkownik NIE jest uwierzytelniony -->
+<form th:action="@{/login}" method="post" sec:authorize="!isAuthenticated()">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" autofocus="autofocus"/>
+    <br/>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" autofocus="autofocus"/>
+    <br/>
+
+    <input class="btn btn-success btn-lg" type="submit" value="Log in!"/>
+</form>
+
+
+<!--&lt;!&ndash; Formularz do wylogowania, akcja na endpoint /logout, wyświetli się tylko jeśli użytkownik JEST uwierzytelniony &ndash;&gt;-->
+<!--<form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">-->
+<!--    <input class="btn btn-primary btn-lg" type="submit" value="Logout">-->
+<!--</form>-->
+
+</body>
+</html>

@@ -3,8 +3,10 @@
 <head>
     <title>Movies</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <div th:replace="fragments/header :: header-css"/>
 </head>
 <body>
+    <div th:replace="fragments/header :: header"/>
     <p th:text="'Added movie ' + ${movie.title} + ' successfully!'" />
     <a href="/movies">Return to movies</a>
 </body>
